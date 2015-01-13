@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter names"
+        android:id="@+id/enter_button"
+        android:layout_marginTop="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load"
+        android:id="@+id/load_button"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/enter_button"
+        android:layout_toStartOf="@+id/enter_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        android:id="@+id/view_button"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/exit_button"
+        android:layout_alignStart="@+id/exit_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store"
+        android:id="@+id/store_button"
+        android:layout_alignTop="@+id/view_button"
+        android:layout_toRightOf="@+id/enter_button"
+        android:layout_toEndOf="@+id/enter_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:id="@+id/exit_button"
+        android:layout_below="@+id/load_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="81dp" />
+
+
+</RelativeLayout>
+
