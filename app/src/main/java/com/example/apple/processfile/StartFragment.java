@@ -1,7 +1,10 @@
 package com.example.apple.processfile;
 
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.DialogPreference;
 import android.support.v4.app.Fragment;
@@ -24,7 +27,6 @@ public class StartFragment extends Fragment implements View.OnClickListener{
     Button store_button;
     Button exit_button;
     EnterFragment enterFragment;
-    ViewFragment viewFragment;
     StoreFragment storeFragment;
     LoadFragment loadFragment;
 //    ExitFragment exitFragment;
@@ -58,8 +60,7 @@ public class StartFragment extends Fragment implements View.OnClickListener{
                 fragmentTransaction.replace(R.id.content,loadFragment).commit();
                 break;
             case R.id.view_button:
-                viewFragment = new ViewFragment();
-                fragmentTransaction.replace(R.id.content,viewFragment).commit();
+                ((MainActivity)getActivity()).callView();
                 break;
             case R.id.store_button:
                 storeFragment = new StoreFragment();
@@ -67,8 +68,12 @@ public class StartFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.exit_button:
                     if((((MainActivity)getActivity()).getIfSaved())){
+                        Intent startMain = new Intent(Intent.ACTION_MAIN);
+                        startMain.addCategory(Intent.CATEGORY_HOME);
+                        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(startMain);
                         System.exit(0);
-                }
+                    }
                     else{
                         final EditText edit = new EditText(getActivity());
                         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
@@ -80,6 +85,10 @@ public class StartFragment extends Fragment implements View.OnClickListener{
                             public void onClick(DialogInterface dialog, int which) {
                                 if(!edit.getText().toString().isEmpty()) {
                                     ((MainActivity) getActivity()).writePeople(((MainActivity) (getActivity())).getTempList(), edit.getText().toString());
+                                    Intent startMain = new Intent(Intent.ACTION_MAIN);
+                                    startMain.addCategory(Intent.CATEGORY_HOME);
+                                    startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(startMain);
                                     System.exit(0);
                                 }
                             }

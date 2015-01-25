@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by apple on 15-01-07.
@@ -36,6 +37,7 @@ public class StoreFragment extends Fragment implements View.OnClickListener{
             case R.id.save:
                 ((MainActivity)getActivity()).writePeople(((MainActivity)(getActivity())).getTempList(),editText.getText().toString());
                 ((MainActivity)getActivity()).setIfSaved(true);
+                Toast.makeText(getActivity(),"The file has been saved!",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.back_in_store:
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

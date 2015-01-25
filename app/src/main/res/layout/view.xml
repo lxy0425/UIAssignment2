@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffe4acc4">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,18 +14,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/buttons_in_view"
-        android:layout_alignParentBottom="true">
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp">
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
             android:id="@+id/back_in_view"
-            android:text="Back"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/view_in_view"
-            android:text="View"/>
-        </LinearLayout>
-
-
+            android:text="Back"
+            android:background="#ffa82d79"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
+    </LinearLayout>
 </RelativeLayout>

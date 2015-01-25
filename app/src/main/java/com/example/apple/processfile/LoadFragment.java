@@ -30,26 +30,18 @@ public class LoadFragment extends ListFragment implements View.OnClickListener{
     }
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        load = (Button)getView().findViewById(R.id.load);
         back_in_load = (Button)getView().findViewById(R.id.back_in_load);
-        load.setOnClickListener(this);
         back_in_load.setOnClickListener(this);
+        ((MainActivity)getActivity()).readAllName();
+        list.clear();
+        list = ((MainActivity)getActivity()).getListName();
+        setListAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,list));
     }
     public void onClick(View view){
-        switch (view.getId()){
-            case R.id.load:
-                ((MainActivity)getActivity()).readAllName();
-                list.clear();
-                list = ((MainActivity)getActivity()).getListName();
-                setListAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,list));
-                break;
-            case R.id.back_in_load:
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                startFragment = new StartFragment();
-                fragmentTransaction.replace(R.id.content,startFragment).commit();
-                break;
-        }
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        startFragment = new StartFragment();
+        fragmentTransaction.replace(R.id.content,startFragment).commit();
     }
     public void onListItemClick(ListView parent,View view,int position,long id){
         ((MainActivity)getActivity()).readPeople(list.get(position));

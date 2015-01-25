@@ -21,6 +21,7 @@ public class LoadFragmentN extends ListFragment implements View.OnClickListener{
     ArrayList<People>list = new ArrayList<>();
     ArrayList<String>item = new ArrayList<>();
     LoadFragment loadFragment;
+    LoadFragmentN loadFragmentN;
     public View onCreateView(LayoutInflater inflater , ViewGroup vp , Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         return inflater.inflate(R.layout.loadn,vp,false);
@@ -30,9 +31,10 @@ public class LoadFragmentN extends ListFragment implements View.OnClickListener{
         list.clear();
         list = ((MainActivity)getActivity()).getList();
         for(int i = 0; i < list.size(); i++){
-            item.add(list.get(i).getName());
-            item.add(new Integer(list.get(i).getAge()).toString());
-            item.add(list.get(i).getFood());
+            item.add("Name: "+ list.get(i).getName());
+            item.add("Age: "+ new Integer(list.get(i).getAge()).toString());
+            item.add("Favourite Food: "+list.get(i).getFood());
+            item.add(" ");
         }
         setListAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,item));
         back_in_loadn = (Button)getView().findViewById(R.id.back_in_loadn);

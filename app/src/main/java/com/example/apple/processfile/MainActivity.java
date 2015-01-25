@@ -1,6 +1,7 @@
 package com.example.apple.processfile;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -18,10 +19,11 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class MainActivity extends FragmentActivity{
+public class MainActivity extends FragmentActivity {
     public static final String NOTES = "notes.txt";
     StartFragment startFragment;
     public static ArrayList<String> list_name = new ArrayList<String>();
@@ -184,6 +186,12 @@ public class MainActivity extends FragmentActivity{
     }
     public void setIfSaved(boolean x){
         this.ifSaved = x;
+    }
+
+    public void callView(){
+        Intent intent = new Intent(this,ViewActivity.class);
+        intent.putExtra("TEMPLIST",getTempList());
+        startActivity(intent);
     }
 
 

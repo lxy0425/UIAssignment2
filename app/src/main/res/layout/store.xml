@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffe4acc4">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -10,17 +11,29 @@
         android:id="@+id/text_store"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
-            android:id="@+id/save"/>
+            android:id="@+id/save"
+            android:background="#ffa82d79"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginRight="15dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
-            android:id="@+id/back_in_store"/>
+            android:id="@+id/back_in_store"
+            android:background="#ffa82d79"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginLeft="15dp"/>
         </LinearLayout>
 
 

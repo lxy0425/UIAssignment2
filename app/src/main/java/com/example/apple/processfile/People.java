@@ -1,9 +1,11 @@
 package com.example.apple.processfile;
 
+import java.io.Serializable;
+
 /**
  * Created by apple on 15-01-07.
  */
-public class People {
+public class People implements Serializable{
     String name;
     int age;
     String food;

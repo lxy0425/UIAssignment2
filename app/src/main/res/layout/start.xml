@@ -1,52 +1,75 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#ffe4acc4">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter names"
-        android:id="@+id/enter_button"
-        android:layout_marginTop="160dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:id="@+id/top_button"
+        android:layout_marginTop="200sp">
+        <Button
+            android:layout_width="120sp"
+            android:layout_height="60sp"
+            android:text="EnterNames"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:id="@+id/enter_button"
+            android:layout_marginRight="15sp"
+            android:background="#ffa82d79"/>
+        <Button
+            android:layout_width="120sp"
+            android:layout_height="60sp"
+            android:text="View"
+            android:id="@+id/view_button"
+            android:layout_marginLeft="15sp"
+            android:background="#ffa82d79"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_button"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:id="@+id/bottom_button"
+            android:layout_marginTop="30sp">
+            <Button
+                android:layout_width="120sp"
+                android:layout_height="60sp"
+                android:text="Store"
+                android:id="@+id/store_button"
+                android:layout_marginRight="15sp"
+                android:background="#ffa82d79"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+            <Button
+                android:layout_width="120sp"
+                android:layout_height="60sp"
+                android:text="Load"
+                android:id="@+id/load_button"
+                android:layout_marginLeft="15sp"
+                android:background="#ffa82d79"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="15dp"/>
+            </LinearLayout>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Load"
-        android:id="@+id/load_button"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/enter_button"
-        android:layout_toStartOf="@+id/enter_button" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View"
-        android:id="@+id/view_button"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/exit_button"
-        android:layout_alignStart="@+id/exit_button" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Store"
-        android:id="@+id/store_button"
-        android:layout_alignTop="@+id/view_button"
-        android:layout_toRightOf="@+id/enter_button"
-        android:layout_toEndOf="@+id/enter_button" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270sp"
+        android:layout_height="60sp"
         android:text="Exit"
         android:id="@+id/exit_button"
-        android:layout_below="@+id/load_button"
+        android:layout_below="@+id/bottom_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="81dp" />
-
-
+        android:layout_marginTop="30sp"
+        android:background="#ffa82d79"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
 </RelativeLayout>
 
